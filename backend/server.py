@@ -64,7 +64,7 @@ def insert_product():
     return response
 
 @app.route('/editProduct', methods=['POST'])
-def insert_product():
+def edit_product():
     request_payload = json.loads(request.form['data'])
     product_id = product_dao.insert_new_product(connection, request_payload)
     response = jsonify({
