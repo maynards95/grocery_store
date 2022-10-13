@@ -10,7 +10,7 @@ var productModal = $("#productModal");
                         '<td>'+ product.name +'</td>'+
                         '<td>'+ product.uom_name +'</td>'+
                         '<td>'+ product.price_per_unit +'</td>'+
-                        '<td><span class="btn btn-xs btn-danger delete-product">Delete</span></td></tr>';
+                        '<td><span class="btn btn-xs btn-danger delete-product">Delete</span> <span class="btn btn-xs btn-edit edit-product">Edit</span></td></tr> + ';
                 });
                 $("table").find('tbody').empty().html(table);
             }
@@ -56,10 +56,18 @@ var productModal = $("#productModal");
         }
     });
 
+    $(document).on("click", ".edit-product", function (){
+        $("#id").val('0');
+        $("#name, #unit, #price").val('');
+        productModal.find('.modal-title').text('Add New Product TEST');
+    });
+
+
+
     productModal.on('hide.bs.modal', function(){
         $("#id").val('0');
         $("#name, #unit, #price").val('');
-        productModal.find('.modal-title').text('Add New Product');
+        productModal.find('.modal-title').text('Add New Product TEST');
     });
 
     productModal.on('show.bs.modal', function(){
