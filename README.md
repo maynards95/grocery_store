@@ -1,4 +1,4 @@
-# inventory_order_system
+# inventory-order-system
 
 Intended to assist business owners with inventory and order tracking. Makes use of SQL via a locally run MySQL Workbench Server.
 
